@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="MediaForge helps you analyze public media links and download MP3 and MP4 formats with a premium experience." />
+    <title>MediaForge | Premium Media Downloads</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <header class="topbar">
+      <a href="#hero" class="brand">
+        <span class="brand-mark">◎</span>
+        <span>MediaForge</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#process">Process</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a href="#process" class="ghost-btn">Start Now</a>
+    </header>
+
+    <main>
+      <section class="hero" id="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Public media. Premium downloads.</p>
+          <h1>Turn any public URL into premium MP3 and MP4 downloads.</h1>
+          <p class="hero-text">
+            Analyze links, compare formats, and manage downloads with a calm, polished dashboard built for modern creators.
+          </p>
+          <div class="hero-actions">
+            <a href="#process" class="primary-btn">Analyze URL</a>
+            <a href="#dashboard" class="secondary-btn">Open Dashboard</a>
+          </div>
+          <div class="hero-badges">
+            <span>⚡ Fast processing</span>
+            <span>🔒 Safe links</span>
+            <span>📦 Multiple qualities</span>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-top">
+            <span class="status-pill">Live</span>
+            <span class="status-pill muted">4K ready</span>
+          </div>
+          <div class="media-preview">
+            <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=700&q=80" alt="Audio visual preview" />
+            <div class="preview-overlay">
+              <h3>Neon Nights</h3>
+              <p>8:42 • 1080p • 1.4 GB</p>
+            </div>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <strong>24k+</strong>
+              <span>Processed links</span>
+            </div>
+            <div>
+              <strong>98.7%</strong>
+              <span>Success rate</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-grid" id="features">
+        <div class="section-heading">
+          <p class="eyebrow">Why MediaForge</p>
+          <h2>Everything you need to turn a link into a reliable download experience.</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="card">
+            <h3>MP3 downloads</h3>
+            <p>High-fidelity audio exports in your preferred bitrate, ideal for podcasts and music.</p>
+          </article>
+          <article class="card">
+            <h3>MP4 downloads</h3>
+            <p>Clean video exports across 144p to 4K with smooth size estimates before you download.</p>
+          </article>
+          <article class="card">
+            <h3>Download history</h3>
+            <p>Track every transfer, review time and size, and keep your favorite files handy.</p>
+          </article>
+          <article class="card">
+            <h3>Secure processing</h3>
+            <p>Sanitized URL input, validation feedback, and safe browser-side handling for quick workflows.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section metrics">
+        <div class="metric-card">
+          <strong data-counter="12000">0</strong>
+          <span>Downloads completed</span>
+        </div>
+        <div class="metric-card">
+          <strong data-counter="340">0</strong>
+          <span>Audio formats ready</span>
+        </div>
+        <div class="metric-card">
+          <strong data-counter="97">0</strong>
+          <span>Average score</span>
+        </div>
+      </section>
+
+      <section class="section" id="process">
+        <div class="section-heading">
+          <p class="eyebrow">Analyze link</p>
+          <h2>Paste a public URL and preview the available media options.</h2>
+        </div>
+
+        <div class="panel">
+          <div class="panel-top">
+            <div class="url-box">
+              <label for="mediaUrl">Media URL</label>
+              <input id="mediaUrl" type="url" placeholder="https://example.com/watch?v=..." />
+              <div class="sample-links">
+                <button class="chip" data-url="https://www.youtube.com/watch?v=dQw4w9WgXcQ">YouTube sample</button>
+                <button class="chip" data-url="https://soundcloud.com/example/ambient-night">Audio sample</button>
+                <button class="chip" data-url="https://vimeo.com/123456789">Video sample</button>
+              </div>
+            </div>
+            <button id="analyzeBtn" class="primary-btn">Analyze</button>
+          </div>
+
+          <div id="dropZone" class="drop-zone">
+            <p>Drop a link here or click to browse sample URLs.</p>
+          </div>
+
+          <div id="analysisResult" class="analysis-result hidden">
+            <div class="result-media">
+              <img id="resultImage" alt="Media thumbnail" />
+              <div class="result-copy">
+                <p class="eyebrow">Analyzed media</p>
+                <h3 id="resultTitle">—</h3>
+                <p id="resultDescription">—</p>
+                <div class="meta-grid">
+                  <span id="resultDuration">—</span>
+                  <span id="resultAuthor">—</span>
+                  <span id="resultDate">—</span>
+                  <span id="resultViews">—</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="formats">
+              <div>
+                <h4>Audio formats</h4>
+                <div id="audioOptions" class="option-list"></div>
+              </div>
+              <div>
+                <h4>Video formats</h4>
+                <div id="videoOptions" class="option-list"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="dashboard">
+        <div class="section-heading">
+          <p class="eyebrow">Download manager</p>
+          <h2>Track progress and keep a short history of every completed export.</h2>
+        </div>
+
+        <div class="dashboard-grid">
+          <div class="panel">
+            <div class="panel-header">
+              <h3>Active queue</h3>
+              <button id="clearQueueBtn" class="ghost-btn small">Clear</button>
+            </div>
+            <div id="queueList" class="queue-list"></div>
+          </div>
+          <div class="panel">
+            <div class="panel-header">
+              <h3>History</h3>
+              <input id="historySearch" type="search" placeholder="Search history" />
+            </div>
+            <div id="historyList" class="history-list"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="section-heading">
+          <p class="eyebrow">FAQ</p>
+          <h2>Answers for creators who want a reliable media workflow.</h2>
+        </div>
+        <div class="faq-list">
+          <details open>
+            <summary>Which formats are supported?</summary>
+            <p>MediaForge focuses on MP3 audio exports and MP4 video exports with quality presets ranging from 144p to 4K.</p>
+          </details>
+          <details>
+            <summary>Can I process public links only?</summary>
+            <p>Yes. The workflow is designed for publicly accessible media URLs and validates links before analysis begins.</p>
+          </details>
+          <details>
+            <summary>Is download history stored?</summary>
+            <p>History is stored in your browser so you can revisit completed downloads without losing context.</p>
+          </details>
+        </details>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 MediaForge. Crafted for modern media workflows.</p>
+    </footer>
+
+    <div id="toast" class="toast" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
